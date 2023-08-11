@@ -31,7 +31,7 @@ export const brewerySlice = createSlice({
     builder.addCase(getBreweries.rejected, (state, action) => {
       if (state.loading === 'pending') {
         state.loading = 'idle'
-        state.error = 'Error occured'
+        state.error = 'Something went wrong!'
       }
     })
   },
