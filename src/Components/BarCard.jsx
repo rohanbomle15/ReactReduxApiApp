@@ -12,10 +12,7 @@ function Barcard(props) {
             <h5>{props.brewery.name}</h5>
           </p>
           <p className="card-text">
-            {props.brewery.street},
-          </p>
-          <p className="card-text">
-            {props.brewery.city}
+            Address: {props.brewery.street}, {props.brewery.city}
           </p>
           <a href="#" class="card-link">Book a Table</a>
         </div>

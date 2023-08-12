@@ -12,10 +12,10 @@ function Infocard(props) {
         </div>
         <div className="card-body">
           <p className="card-title">
-            {props.brewery.street}, {props.brewery.city}
+            Address: {props.brewery.street}, {props.brewery.city}
           </p>
           <p className="card-title">
-            {props.brewery.phone}
+            Phone: {props.brewery.phone}
           </p>
         </div>
       </div>

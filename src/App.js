@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Breweries from "./Features/Brewery";
 import Bar from "./Features/Bar";
 import Navbar from "./Components/Navbar";
+import Contactus from "./Components/Contactus";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Breweries />} />
           <Route path="/bars" element={<Bar />} />
+          <Route path="/contactus" element={<Contactus/>} />
         </Routes>
       </div>
     </Router>

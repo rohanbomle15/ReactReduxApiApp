@@ -19,20 +19,35 @@
   background: rgba(46, 15, 241, 0.8);
 }
 
-.App .navbar .nav-links {
-  width: 50%;
+ul {
+  list-style: none;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  list-style: none;
 }
-
-.App .navbar .nav-links>a{
-  color: #fff;
+ul li a{
   text-decoration: none;
-  font-size: large;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: normal;
+}
+ul li a:hover{
+  background-color: red;
+  color: #fff;
+}
+.active{
+  background-color: red;
+  color: #fff;
 }
 
 .App .row {
   margin: 20px;
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .App .navbar .nav-links>a{
+    color: #fff;
+    text-decoration: none;
+    font-size: small;
+  }
 }
