@@ -1,22 +1,21 @@
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import Breweries from './Features/Brewery'
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Breweries from "./Features/Brewery";
+import Bar from "./Features/Bar";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <div className="container">
-      <div className="d-flex border-bottom pt-2 pb-2 mb-5">
-        <div className="p-2 flex-grow-1">Brewery Store</div>
-        <div>
-          <div>
-            <a className="nav-link" aria-current="page" href="#">
-              Breweries
-            </a>
-          </div>
-        </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<Breweries />} />
+          <Route path="/bars" element={<Bar />} />
+        </Routes>
       </div>
-      <Breweries />
-    </div>
-  )
+    </Router>
+  );
 }
-export default App
+export default App;

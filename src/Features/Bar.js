@@ -2,16 +2,17 @@ import React, { useEffect } from "react";
 import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getBreweries } from "./BrewerySlice";
-import Infocard from "../Components/Infocard";
+import Barcard from "../Components/BarCard";
 import Loading from "../Components/Loading";
 import ErrorInfo from "../Components/ErrorInfo";
+import { getBars } from "./BarSlice";
 
-function Brewery() {
+function Bar() {
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector((state) => state.breweries);
+  const { data, loading, error } = useSelector((state) => state.bars);
 
   useEffect(() => {
-    dispatch(getBreweries());
+    dispatch(getBars());
   }, [dispatch]);
 
   let content;
@@ -21,7 +22,7 @@ function Brewery() {
   }
   if (loading === "idle") {
     content = data.map((item) => {
-      return <Infocard brewery={item} key={item.id} />;
+      return <Barcard brewery={item} key={item.id} />;
     });
   }
   if (error !== null) {
@@ -31,4 +32,4 @@ function Brewery() {
   return <div className="row">{content}</div>;
 }
 
-export default Brewery;
+export default Bar;
