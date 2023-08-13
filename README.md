@@ -5,6 +5,7 @@ Lets work with asynchronous HTTP requests in the React js application using the 
 # Redux Store
 Redux store gives utmost flexibility to React components. React components read data from a centralized Redux store.
 
+
 # React Hooks
 ## useEffect 
 is a React Hook that lets you synchronize a component with an external system.
@@ -13,10 +14,11 @@ is a React Hook that lets you synchronize a component with an external system.
 is yet another hook in redux which is equivalent to the mapDispatchToProps argument in the connect() higher-order function. It allows you to send or dispatch an action to the redux store by giving the action as an argument to the dispatch variable.
 
 
-## createSlice 
+# createSlice 
 is a function available via the redux toolkit library. It accepts an initial state, an object of reducer functions, and a “slice name”, and by default, creates action creators and action types that coordinate with the reducers and state.
 
-## createAsyncThunk 
+
+# createAsyncThunk 
 is used to handle asynchronous requests. It produces a definitive Redux thunk action creator. The thunk action creator returns action creators that offer pending, fulfilled, and rejected cases hooked as nested fields.
 
 
