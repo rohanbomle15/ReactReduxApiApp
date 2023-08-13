@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getBreweries } from "./BrewerySlice";
 import Barcard from "../Components/BarCard";
 import Loading from "../Components/Loading";
 import ErrorInfo from "../Components/ErrorInfo";
