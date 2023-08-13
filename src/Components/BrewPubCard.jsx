@@ -1,6 +1,6 @@
 import React from "react";
 
-function Barcard(props) {
+function BrewPubCard(props) {
   return (
     <div
       className="col-lg-4 mb-3 d-flex align-items-stretch h-100"
@@ -21,4 +21,4 @@ function Barcard(props) {
   );
 }
 
-export default Barcard;
+export default BrewPubCard;

@@ -1,15 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getBars = createAsyncThunk("breweries/getBars", async () => {
+export const getBrewPubs = createAsyncThunk("breweries/getBrewPubs", async () => {
   const response = await axios.get(
     "https://api.openbrewerydb.org/v1/breweries?by_type=brewpub"
   );
   return response.data;
 });
 
-export const barSlice = createSlice({
-  name: "bars",
+export const brewPubSlice = createSlice({
+  name: "brewPubs",
   initialState: {
     data: [],
     loading: "idle",
@@ -17,20 +17,20 @@ export const barSlice = createSlice({
   },
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getBars.pending, (state, action) => {
+    builder.addCase(getBrewPubs.pending, (state, action) => {
       if (state.loading === "idle") {
         state.loading = "pending";
       }
     });
 
-    builder.addCase(getBars.fulfilled, (state, action) => {
+    builder.addCase(getBrewPubs.fulfilled, (state, action) => {
       if (state.loading === "pending") {
         state.data = action.payload;
         state.loading = "idle";
       }
     });
 
-    builder.addCase(getBars.rejected, (state, action) => {
+    builder.addCase(getBrewPubs.rejected, (state, action) => {
       if (state.loading === "pending") {
         state.loading = "idle";
         state.error = "Something went wrong!";
@@ -39,4 +39,4 @@ export const barSlice = createSlice({
   },
 });
 
-export default barSlice.reducer;
+export default brewPubSlice.reducer;

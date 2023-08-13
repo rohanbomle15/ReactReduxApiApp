@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import breweriesReducer from "../Features/BrewerySlice";
-import barReducer from "../Features/BarSlice";
+import brewPubReducer from "../Features/BrewPubSlice";
 
 export default configureStore({
   reducer: {
     breweries: breweriesReducer,
-    bars: barReducer,
+    bars: brewPubReducer,
   },
 });

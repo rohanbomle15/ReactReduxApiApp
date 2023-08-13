@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getBreweries } from "./BrewerySlice";
+import { getBreweries } from "../Features/BrewerySlice";
 import Infocard from "../Components/Infocard";
 import Loading from "../Components/Loading";
 import ErrorInfo from "../Components/ErrorInfo";
+import "../App.css";
 
 function Brewery() {
   const dispatch = useDispatch();

@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
-import Barcard from "../Components/BarCard";
+import BrewPubCard from "../Components/BrewPubCard";
 import Loading from "../Components/Loading";
 import ErrorInfo from "../Components/ErrorInfo";
-import { getBars } from "./BarSlice";
+import { getBrewPubs } from "../Features/BrewPubSlice";
+import "../App.css";
 
-function Bar() {
+function BrewPub() {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.bars);
 
   useEffect(() => {
-    dispatch(getBars());
+    dispatch(getBrewPubs());
   }, [dispatch]);
 
   let content;
@@ -21,7 +21,7 @@ function Bar() {
   }
   if (loading === "idle") {
     content = data.map((item) => {
-      return <Barcard brewery={item} key={item.id} />;
+      return <BrewPubCard brewery={item} key={item.id} />;
     });
   }
   if (error !== null) {
@@ -31,4 +31,4 @@ function Bar() {
   return <div className="row">{content}</div>;
 }
 
-export default Bar;
+export default BrewPub;
